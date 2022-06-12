@@ -1132,7 +1132,7 @@ public class UIInput extends UIOutput implements EditableValueHolder {
                 return true;
             }
         } else if (value instanceof Collection) {
-            if (((Collection) value).isEmpty()) {
+			if (((Collection<?>) value).isEmpty()) {
                 return true;
             }
         } else if (value instanceof Map && ((Map) value).isEmpty()) {

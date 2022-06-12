@@ -1295,7 +1295,7 @@ public abstract class UIComponentBase extends UIComponent {
         }
 
         if (newWillSucceed && attachedObject instanceof Collection) {
-            Collection attachedCollection = (Collection) attachedObject;
+			Collection<?> attachedCollection = (Collection<?>) attachedObject;
             List<StateHolderSaver> resultList = new ArrayList<>(attachedCollection.size() + 1);
             resultList.add(new StateHolderSaver(context, mapOrCollectionClass));
             for (Object item : attachedCollection) {
@@ -1308,7 +1308,7 @@ public abstract class UIComponentBase extends UIComponent {
             }
             result = resultList;
         } else if (newWillSucceed && attachedObject instanceof Map) {
-            Map<Object, Object> attachedMap = (Map<Object, Object>) attachedObject;
+			Map<Object, Object> attachedMap = (Map<Object, Object>) attachedObject;
             List<StateHolderSaver> resultList = new ArrayList<>(attachedMap.size() * 2 + 1);
             resultList.add(new StateHolderSaver(context, mapOrCollectionClass));
             Object key, value;
@@ -2673,7 +2673,7 @@ public abstract class UIComponentBase extends UIComponent {
         }
 
         @Override
-        public boolean removeAll(Collection c) {
+		public boolean removeAll(Collection<?> c) {
             boolean result = false;
             for (Object element : c) {
                 if (remove(element)) {
@@ -2684,9 +2684,9 @@ public abstract class UIComponentBase extends UIComponent {
         }
 
         @Override
-        public boolean retainAll(Collection c) {
+		public boolean retainAll(Collection<?> c) {
             boolean result = false;
-            Iterator v = iterator();
+			Iterator<?> v = iterator();
             while (v.hasNext()) {
                 if (!c.contains(v.next())) {
                     v.remove();
@@ -2834,7 +2834,7 @@ public abstract class UIComponentBase extends UIComponent {
         }
 
         @Override
-        public boolean containsAll(Collection c) {
+		public boolean containsAll(Collection<?> c) {
             for (Object item : c) {
                 if (!map.containsKey(item)) {
                     return false;
@@ -2864,7 +2864,7 @@ public abstract class UIComponentBase extends UIComponent {
         }
 
         @Override
-        public boolean removeAll(Collection c) {
+		public boolean removeAll(Collection<?> c) {
             boolean result = false;
             for (Object item : c) {
                 if (map.containsKey(item)) {
@@ -2876,7 +2876,7 @@ public abstract class UIComponentBase extends UIComponent {
         }
 
         @Override
-        public boolean retainAll(Collection c) {
+		public boolean retainAll(Collection<?> c) {
             boolean result = false;
             Iterator v = iterator();
             while (v.hasNext()) {

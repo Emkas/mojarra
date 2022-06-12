@@ -1705,7 +1705,7 @@ public class UIData extends UIComponentBase implements NamingContainer, UniqueId
         } else if (current instanceof ResultSet) {
             setDataModel(new ResultSetDataModel((ResultSet) current));
         } else if (current instanceof Collection) {
-            setDataModel(new CollectionDataModel((Collection) current));
+			setDataModel(new CollectionDataModel((Collection<?>) current));
         } else if (current instanceof Iterable) {
             setDataModel(new IterableDataModel<>((Iterable<?>) current));
         } else if (current instanceof Map) {

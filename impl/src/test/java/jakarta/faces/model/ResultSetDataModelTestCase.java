@@ -464,7 +464,7 @@ public class ResultSetDataModelTestCase extends DataModelTestCaseBase {
         assertNotNull(data);
         assertTrue(data instanceof Map);
         Map map = (Map) data;
-        Collection values = map.values();
+        Collection<?> values = map.values();
 
         // Test positive results
         assertTrue(values.contains(Boolean.TRUE));

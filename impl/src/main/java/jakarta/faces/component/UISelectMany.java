@@ -463,7 +463,7 @@ public class UISelectMany extends UIInput {
         }
 
         if (primitiveArray instanceof Collection) {
-            return ((Collection) primitiveArray).toArray();
+			return ((Collection<?>) primitiveArray).toArray();
         }
 
         Class<?> clazz = primitiveArray.getClass();
@@ -559,7 +559,7 @@ public class UISelectMany extends UIInput {
 
     private Iterator getValuesIterator(Object value) {
         if (value instanceof Collection) {
-            return ((Collection) value).iterator();
+			return ((Collection<?>) value).iterator();
         }
 
         return new ArrayIterator(value);

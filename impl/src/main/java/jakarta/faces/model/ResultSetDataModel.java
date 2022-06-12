@@ -506,13 +506,13 @@ public class ResultSetDataModel extends DataModel<Map<String, Object>> {
 
         // Removing entries is not allowed
         @Override
-        public boolean removeAll(Collection c) {
+        public boolean removeAll(Collection<?> c) {
             throw new UnsupportedOperationException();
         }
 
         // Removing entries is not allowed
         @Override
-        public boolean retainAll(Collection c) {
+        public boolean retainAll(Collection<?> c) {
             throw new UnsupportedOperationException();
         }
 
@@ -673,13 +673,13 @@ public class ResultSetDataModel extends DataModel<Map<String, Object>> {
 
         // Removing keys is not allowed
         @Override
-        public boolean removeAll(Collection c) {
+		public boolean removeAll(Collection<?> c) {
             throw new UnsupportedOperationException();
         }
 
         // Removing keys is not allowed
         @Override
-        public boolean retainAll(Collection c) {
+		public boolean retainAll(Collection<?> c) {
             throw new UnsupportedOperationException();
         }
 
@@ -734,7 +734,7 @@ public class ResultSetDataModel extends DataModel<Map<String, Object>> {
         }
 
         @Override
-        public boolean addAll(Collection c) {
+		public boolean addAll(Collection<?> c) {
             throw new UnsupportedOperationException();
         }
 
@@ -759,12 +759,12 @@ public class ResultSetDataModel extends DataModel<Map<String, Object>> {
         }
 
         @Override
-        public boolean removeAll(Collection c) {
+		public boolean removeAll(Collection<?> c) {
             throw new UnsupportedOperationException();
         }
 
         @Override
-        public boolean retainAll(Collection c) {
+		public boolean retainAll(Collection<?> c) {
             throw new UnsupportedOperationException();
         }
 
